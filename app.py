@@ -12,7 +12,7 @@ def main():
         st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
     elif nim == "200205502002":
         nama_pengguna = "Yusraul Fitrah"
-        st.write(f'Sudah mki kita' {nama_pengguna}, tapi semangatki jalani proses. Dan tunggui teman satu dosen PA ta kodong.')
+        st.write(f'Sudah mki kita {nama_pengguna}, tapi semangatki jalani proses. Dan tunggui teman satu dosen PA ta kodong.')
         #gambar_lokal = 'bah sod.jpg'
         #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
     elif nim == "200205501004":
