@@ -27,7 +27,7 @@ def main():
         #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
     elif nim == "200205500002":
         nama_pengguna = "Yaya Ferida"
-        st.write(f'wiss nih {nama_pengguna} nih boss *Ferdian, le'ba' tongmi tawwa')
+        st.write(f'wiss nih {nama_pengguna} nih boss *Ferdian, lekbak tongmi tawwa')
         #gambar_lokal = 'bah sod.jpg'
         #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
     elif nim == "":
