@@ -2,7 +2,6 @@ import subprocess
 
 # Jalankan perintah instalasi dependensi
 subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
-subprocess.call(['pip', 'install', '-r', 'gspread'])
 
 import streamlit as st
 import gspread
