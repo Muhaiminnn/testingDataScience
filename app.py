@@ -8,7 +8,7 @@ import gspread
 
 spreadsheet_key = '1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk'
 worksheet_name = 'dailybrentoil'
-
+gc = gspread.service_account()
 
 sh = gc.open_by_key(spreadsheet_key)
 worksheet = spreadsheet.worksheet(worksheet_name)
