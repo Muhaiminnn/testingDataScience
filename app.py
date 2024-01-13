@@ -15,6 +15,7 @@ data = data.drop(kolom_yang_dihapus, axis=1)
 def main():
     st.title("Prediksi Harga Minyak Dunia By Muhaimin\n Mini Project Data Scientist Kalla")
     #st.table(data)
+    st.write("Deskripsi Data")
     st.write(data.describe())
 
 if __name__ == '__main__':
