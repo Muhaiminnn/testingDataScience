@@ -4,23 +4,6 @@ import subprocess
 subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 
 import streamlit as st
-import pandas as pd
-import numpy as np
-
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-import zipfile
-
-from sklearn.decomposition import PCA
-from sklearn.preprocessing import MinMaxScaler
-from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score
-from sklearn.metrics import mean_squared_error
-from sklearn.impute import SimpleImputer
-
-from sklearn.svm import SVR
-from sklearn.ensemble import GradientBoostingRegressor
-from sklearn.neighbors import KNeighborsRegressor
 
 spreadsheet_link = 'https://docs.google.com/spreadsheets/d/1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk/edit?usp=sharing'
 
