@@ -9,7 +9,7 @@ import gspread
 spreadsheet_link = 'https://docs.google.com/spreadsheets/d/1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk/edit?usp=sharing'
 
 # Buka spreadsheet menggunakan tautan
-sh = gspread.open_by_url(spreadsheet_link)
+sh = gspread.open_by_key(spreadsheet_link)
 worksheet_name = 'dailybrentoil'
 worksheet = sh.worksheet(worksheet_name)
 
