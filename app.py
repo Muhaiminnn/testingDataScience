@@ -1,3 +1,8 @@
+import subprocess
+
+# Jalankan perintah instalasi dependensi
+subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
+
 import streamlit as st
 import pandas as pd
 import numpy as np
