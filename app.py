@@ -6,6 +6,8 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 import streamlit as st
 import pandas as pd
 data = pd.read_csv('dailybrentoil.csv')
+kolom_yang_dihapus = ['Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9']
+data = data.drop(kolom_yang_dihapus, axis=1)
 
 def main():
     st.title("Prediksi Harga Minyak Dunia By Muhaimin\n Mini Project Data Scientist Kalla")
