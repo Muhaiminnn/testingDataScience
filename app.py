@@ -6,14 +6,12 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 import streamlit as st
 import gspread
 
-spreadsheet_link = 'https://docs.google.com/spreadsheets/d/1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk/edit?usp=sharing'
-
-# Buka spreadsheet menggunakan tautan
-gc = gspread.service_account()
-spreadsheet = open_spreadsheet_by_url(spreadsheet_url)
+spreadsheet_key = '1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk'
 worksheet_name = 'dailybrentoil'
-worksheet = open_worksheet_by_name(spreadsheet, worksheet_name)
 
+
+sh = gc.open_by_key(spreadsheet_key)
+worksheet = spreadsheet.worksheet(worksheet_name)
 # Ambil data
 data = worksheet.get_all_records()
 
