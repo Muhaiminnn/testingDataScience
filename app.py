@@ -1,39 +1,36 @@
 import streamlit as st
+import pandas as pd
+import numpy as np
+
+from matplotlib import pyplot as plt
+import seaborn as sns
+%matplotlib inline
+
+import zipfile
+
+from sklearn.decomposition import PCA
+from sklearn.preprocessing import MinMaxScaler
+from sklearn.model_selection import GridSearchCV, train_test_split, cross_val_score
+from sklearn.metrics import mean_squared_error
+from sklearn.impute import SimpleImputer
+
+from sklearn.svm import SVR
+from sklearn.ensemble import GradientBoostingRegressor
+from sklearn.neighbors import KNeighborsRegressor
+
+spreadsheet_link = 'https://docs.google.com/spreadsheets/d/1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk/edit?usp=sharing'
+
+# Buka spreadsheet menggunakan tautan
+sh = gspread.open_by_url(spreadsheet_link)
+worksheet_name = 'dailybrentoil'
+worksheet = sh.worksheet(worksheet_name)
+
+# Ambil data
+data = worksheet.get_all_records()
 
 def main():
-    st.title("Seputar Sempro!")
-
-    # Tambahkan elemen-elemen Streamlit
-    nim = st.text_input("Masukkan NIM:")
-    if nim == "200205501009":
-        nama_pengguna = "Muhaimin"
-        st.write(f'Selamat Seminar Proposal, {nama_pengguna}!')
-        gambar_lokal = 'bah sod.jpg'
-        st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
-    elif nim == "200205502002":
-        nama_pengguna = "Yusraul Fitrah"
-        st.write(f'Sudah mki kita {nama_pengguna}, tapi semangatki jalani proses. Dan tunggui teman satu dosen PA ta kodong.')
-        #gambar_lokal = 'bah sod.jpg'
-        #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
-    elif nim == "200205501004":
-        nama_pengguna = "Hasril"
-        st.write(f'Baru-baru sudah {nama_pengguna} sempro nah, nah kita mi itu paling lancar bimbingan.')
-        #gambar_lokal = 'bah sod.jpg'
-        #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
-    elif nim == "200205502015":
-        nama_pengguna = "Muhammad Ikram"
-        st.write(f'Ededeh apaji kau {nama_pengguna}, kah lamami kau sudah.')
-        #gambar_lokal = 'bah sod.jpg'
-        #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
-    elif nim == "200205500002":
-        nama_pengguna = "Yaya Ferida"
-        st.write(f'wiss nih {nama_pengguna} nih boss *Ferdian, lekbak tongmi tawwa')
-        #gambar_lokal = 'bah sod.jpg'
-        #st.image(gambar_lokal, caption='Korban Tumbuk Dada', use_column_width=True)
-    elif nim == "":
-        st.write(f'Masukin NIM dulu lah kocak!')
-    else:
-        st.write(f'Lah kamu ga diajak...')
+    st.title("Prediksi Harga Minyak Dunia By Muhaimin\n Mini Project Data Scientist Kalla")
+    st.table(data)
 
 if __name__ == '__main__':
     main()
