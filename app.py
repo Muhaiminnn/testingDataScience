@@ -6,7 +6,7 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 import streamlit as st
 import gspread
 
-spreadsheet_link = 'https://docs.google.com/spreadsheets/d/1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk/edit?usp=sharing'
+spreadsheet_link = '1T90XmDuGPtkPtQwC2b1Yt0e5cJiPNfgPcSGvMfLEtDk'
 
 # Buka spreadsheet menggunakan tautan
 sh = gspread.open_by_key(spreadsheet_link)
