@@ -8,20 +8,14 @@ import streamlit as st
 def beranda():
     st.title("Aplikasi Streamlit dengan Sidebar Permanen - Beranda")
     st.write("Selamat datang di halaman beranda!")
-    if st.button("Pergi ke Bagian Pertama"):
-        st.session_state.halaman = "Bagian Pertama"
 
 def bagian_pertama():
     st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Pertama")
     st.write("Anda berada di bagian pertama.")
-    if st.button("Pergi ke Bagian Kedua"):
-        st.session_state.halaman = "Bagian Kedua"
 
 def bagian_kedua():
     st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Kedua")
     st.write("Anda berada di bagian kedua.")
-    if st.button("Kembali ke Beranda"):
-        st.session_state.halaman = "Beranda"
 
 def main():
     st.set_page_config(page_title="Sidebar Permanen", page_icon=":house:", layout="wide")
@@ -38,8 +32,26 @@ def main():
 
     if st.session_state.halaman != halaman_terpilih:
         st.session_state.halaman = halaman_terpilih
-        
+
     halaman[st.session_state.halaman]()
 
+    st.markdown(
+        """
+        <style>
+            .sidebar .sidebar-content {
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 20px;
+                position: fixed;
+                height: 100%;
+                overflow-y: auto;
+            }
+            .main {
+                margin-left: 320px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 if __name__ == "__main__":
     main()
