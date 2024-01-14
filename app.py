@@ -12,6 +12,8 @@ def beranda():
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
+    st.write("Muhaimin - Universitas Negeri Makassar")
+    st.write("14 Januari 2023")
 
 def bagian_kedua():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
