@@ -39,15 +39,15 @@ def main():
         """
         <style>
             .sidebar .sidebar-content {
-                width: 300px;
-                background-color: #f4f4f4;
+                width: 250px;
+                background-color: #44c944;
                 padding: 20px;
                 position: fixed;
                 height: 100%;
                 overflow-y: auto;
             }
             .main {
-                margin-left: 320px;
+                margin-left: 50px;
             }
         </style>
         """,
