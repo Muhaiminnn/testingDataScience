@@ -11,7 +11,7 @@ def first_page():
 
     # Display a button to navigate to the second page
     if st.button("Go to Second Page"):
-        st.session_state.page = "Second Page"
+        st.session_state.page = second_page
 
     # Display content for the first page
     st.text("Welcome to the first page!")
@@ -22,7 +22,7 @@ def second_page():
 
     # Display a button to navigate back to the first page
     if st.button("Go to First Page"):
-        st.session_state.page = "Home"
+        st.session_state.page = first_page
 
     # Display content for the second page
     st.text("This is the second page!")
