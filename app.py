@@ -33,13 +33,23 @@ def bagian_pertama():
     st.write("Info Data")
     st.dataframe(df_daily.describe())
 
+    column_a = df_daily['Date']
+    column_b = df_daily['Close']
+
+    array_a = column_a.to_numpy()
+    array_b = column_b.to_numpy()
+
+    df_plt['Date'] = array_a
+    df_plt['Close'] = array_b
+    
     df_plt['Date'] = pd.to_datetime(df_plt['Date'])
     plt.figure(figsize=(10, 6))
-    plt.plot(df_daily['Date'], df_daily['Close'], label='Close Price')
+    plt.plot(df_plt['Date'], df_plt['Close'], label='Close Price')
     plt.title('Close Price Over Time')
     plt.xlabel('Date')
     plt.ylabel('Close Price')
     plt.legend()
+    plt.show()
     st.pyplot(plt)
     
 
