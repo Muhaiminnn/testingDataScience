@@ -7,13 +7,16 @@ import streamlit as st
 
 def beranda():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
+    st.write("Muhaimin - Universitas Negeri Makassar")
+    st.write("14 Januari 2023")
     st.write("Task Mini Project:")
+    st.write("Sebagai Pemenuhan Kualifikasi Posisi Data Scientist di Kalla")
+    st.image("GambarTask.jpg")
 
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
-    st.write("Muhaimin - Universitas Negeri Makassar")
-    st.write("14 Januari 2023")
+    
 
 def bagian_kedua():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
