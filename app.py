@@ -42,7 +42,7 @@ def bagian_pertama():
     array_a = column_a.to_numpy()
     array_b = column_b.to_numpy()
     
-    array_a = pd.to_datetime(array_a, format='%m/%d/%Y')
+    #array_a = pd.to_datetime(array_a, format='%m/%d/%Y')
     array_a_2d = array_a.reshape(-1, 1)
     plt.figure(figsize=(10, 6))
     plt.plot(array_a_2d, array_b, label='Close Price')
