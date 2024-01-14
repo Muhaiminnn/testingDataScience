@@ -10,7 +10,8 @@ def beranda():
     st.write("Muhaimin - Universitas Negeri Makassar")
     st.write("14 Januari 2023")
     st.write("Task Mini Project:")
-    st.image("GambarTask.jpg", width=300, height=700, caption="Sebagai Pemenuhan Kualifikasi Posisi Data Scientist di Kalla")
+    st.write("Hasil pengerjaan bisa diliat pada Navigasi bagian kiri")
+    st.image("GambarTask.jpg", caption="Sebagai Pemenuhan Kualifikasi Posisi Data Scientist di Kalla")
 
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
