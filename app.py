@@ -42,7 +42,7 @@ def bagian_pertama():
     df_plt['Date'] = array_a
     df_plt['Close'] = array_b
     
-    df_plt['Date'] = pd.to_datetime(df_plt['Date'])
+    array_a = pd.to_datetime(array_a)
     plt.figure(figsize=(10, 6))
     plt.plot(array_a, array_b, label='Close Price')
     plt.title('Close Price Over Time')
