@@ -33,8 +33,12 @@ def main():
 
     halaman = {"Beranda": beranda, "Bagian Pertama": bagian_pertama, "Bagian Kedua": bagian_kedua}
 
-    st.sidebar.radio("Pilih halaman", list(halaman.keys()))
+    st.sidebar.write("Pilih halaman:")
+    halaman_terpilih = st.sidebar.radio("", list(halaman.keys()))
 
+    if st.session_state.halaman != halaman_terpilih:
+        st.session_state.halaman = halaman_terpilih
+        
     halaman[st.session_state.halaman]()
 
 if __name__ == "__main__":
