@@ -41,12 +41,9 @@ def bagian_pertama():
 
     array_a = column_a.to_numpy()
     array_b = column_b.to_numpy()
-
-    df_plt['Date'] = array_a
-    df_plt['Close'] = array_b
     
     array_a = pd.to_datetime(array_a, format='%m/%d/%Y')
-    array_a_2d = array_a[:, np.newaxis]
+    array_a_2d = array_a.reshape(-1, 1)
     plt.figure(figsize=(10, 6))
     plt.plot(array_a_2d, array_b, label='Close Price')
     plt.title('Close Price Over Time')
