@@ -49,7 +49,7 @@ def bagian_pertama():
     #----
     df_plt['Date'] = pd.to_datetime(df_plt['Date'])
     plt.figure(figsize=(10, 6))
-    plt.plot(df_plt['Date'], df_plt['Close'], label='Close Price')
+    plt.plot(resultA, resultB, label='Close Price')
     plt.title('Close Price Over Time')
     plt.xlabel('Date')
     plt.ylabel('Close Price')
