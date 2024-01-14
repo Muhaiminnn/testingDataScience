@@ -36,7 +36,7 @@ def bagian_pertama():
     df_daily[['tanggal','jam']] = df_daily['Date'].str.split(' ',expand = True)
     df_daily.drop("Date",inplace = True, axis = 1)
     
-    column_a = df_daily['Date']
+    column_a = df_daily['tanggal']
     column_b = df_daily['Close']
 
     array_a = column_a.to_numpy()
