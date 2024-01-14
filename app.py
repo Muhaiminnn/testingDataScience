@@ -4,30 +4,41 @@ import subprocess
 subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 
 import streamlit as st
-import pandas as pd
-import matplotlib.pyplot as plt
-import seaborn as sns
-
-data = pd.read_csv('dailybrentoil.csv')
-kolom_yang_dihapus = ['Unnamed: 7', 'Unnamed: 8', 'Unnamed: 9']
-data = data.drop(kolom_yang_dihapus, axis=1)
-data['Date'] = pd.to_datetime(data['Date'])
-data.set_index('Date', inplace=True)
-
-plt.figure(figsize=(12, 6))
-plt.plot(data['Open'], label='Open Price')
-plt.title('Harga Open over Time')
-plt.xlabel('Tanggal')
-plt.ylabel('Harga Open')
-plt.legend()
-plt.show()
 
 def main():
-    st.title("Mini Project Prediksi Harga Minyak Dunia By Muhaimin")
-    #st.table(data)
-    st.write("Deskripsi Data")
-    st.write(data.describe())
-    st.pyplot(plt)
+    # Set the title of the app
+    st.title("Streamlit Multi-Page App")
 
-if __name__ == '__main__':
+    # Display a button to navigate to the second page
+    if st.button("Go to Second Page"):
+        st.experimental_rerun()
+
+    # Display content for the first page
+    st.text("Welcome to the first page!")
+
+def second_page():
+    # Set the title of the second page
+    st.title("Second Page")
+
+    # Display a button to navigate back to the first page
+    if st.button("Go to First Page"):
+        st.experimental_rerun()
+
+    # Display content for the second page
+    st.text("This is the second page!")
+
+def main():
+    # Set the title of the app
+    st.title("Streamlit Multi-Page App")
+
+    # Define the pages using a dictionary
+    pages = {"Home": main, "Second Page": second_page}
+
+    # Add a sidebar to select the page
+    selected_page = st.sidebar.selectbox("Select a page", list(pages.keys()))
+
+    # Run the selected page function
+    pages[selected_page]()
+
+if __name__ == "__main__":
     main()
