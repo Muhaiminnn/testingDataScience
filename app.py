@@ -14,6 +14,7 @@ file = "dailybrentoil.csv"
 
 df_daily = pd.read_csv(file)
 df_daily = df_daily.iloc[:, :-3]
+df_plt = df_daily[['Date', 'Close']].copy()
 # -- -- --
 
 def beranda():
@@ -33,7 +34,7 @@ def bagian_pertama():
     st.dataframe(df_daily.describe())
     df_daily['Date'] = pd.to_datetime(df_daily['Date'])
     plt.figure(figsize=(10, 6))
-    plt.plot(df_daily['Date'], df_daily['Close'], label='Close Price')
+    plt.plot(df_plt['Date'], df_plt['Close'], label='Close Price')
     plt.title('Close Price Over Time')
     plt.xlabel('Date')
     plt.ylabel('Close Price')
