@@ -10,7 +10,7 @@ import seaborn as sns
 import streamlit as st
 
 # -- Import File --
-file = st.file_uploader("brentcrudeoil.", type=["xlsx", "xls"])
+file = "/main/testingDataScience/brentcrudeoil.xlsx"
 
 df_daily = pd.read_excel(file, sheet_name='dailybrentoil')
 df_daily = df_daily.iloc[:, :-3]
