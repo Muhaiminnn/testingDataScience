@@ -5,40 +5,51 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 
 import streamlit as st
 
-def first_page():
-    # Set the title of the app
-    st.title("Task Mini Project:")
+def beranda():
+    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Beranda")
 
-    # Display a button to navigate to the second page
-    if st.button("Go to Second Page"):
-        st.session_state.page = second_page
+    st.write("Selamat datang di halaman beranda!")
 
-    # Display content for the first page
-    st.text("Welcome to the first page!")
+def bagian_pertama():
+    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Pertama")
 
-def second_page():
-    # Set the title of the second page
-    st.title("Second Page")
+    st.write("Anda berada di bagian pertama.")
 
-    # Display a button to navigate back to the first page
-    if st.button("Go to First Page"):
-        st.session_state.page = first_page
+def bagian_kedua():
+    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Kedua")
 
-    # Display content for the second page
-    st.text("This is the second page!")
+    st.write("Anda berada di bagian kedua.")
 
 def main():
-    # Set the title of the app
-    st.title("Mini Project Kalla")
+    st.markdown(
+        """
+        <style>
+            .sidebar .sidebar-content {
+                width: 300px;
+                background-color: #f4f4f4;
+                padding: 20px;
+                position: fixed;
+                height: 100%;
+                overflow-y: auto;
+            }
+            .main {
+                margin-left: 320px;
+            }
+        </style>
+        """,
+        unsafe_allow_html=True
+    )
 
-    # Define the pages using a dictionary
-    pages = {"Home": first_page, "Second Page": second_page}
+    st.sidebar.title("Navigasi")
 
-    # Add a sidebar to select the page
-    selected_page = st.sidebar.selectbox("Select a page", list(pages.keys()))
+    if "halaman" not in st.session_state:
+        st.session_state.halaman = "Beranda"
 
-    # Run the selected page function
-    pages[selected_page]()
+    halaman = {"Beranda": beranda, "Bagian Pertama": bagian_pertama, "Bagian Kedua": bagian_kedua}
+
+    st.sidebar.radio("Pilih halaman", list(halaman.keys()))
+
+    halaman[st.session_state.halaman]()
 
 if __name__ == "__main__":
     main()
