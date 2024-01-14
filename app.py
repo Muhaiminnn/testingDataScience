@@ -9,9 +9,6 @@ def main():
     # Set the title of the app
     st.title("Task Mini Project:")
 
-   if "page" not in st.session_state:
-        st.session_state.page = "Home"
-
     # Display a button to navigate to the second page
     if st.button("Go to Second Page"):
         st.session_state.page = "Second Page"
