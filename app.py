@@ -5,7 +5,7 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 
 import streamlit as st
 
-def main():
+def first_page():
     # Set the title of the app
     st.title("Task Mini Project:")
 
@@ -32,7 +32,7 @@ def main():
     st.title("Mini Project Kalla")
 
     # Define the pages using a dictionary
-    pages = {"Home": main, "Second Page": second_page}
+    pages = {"Home": first_page, "Second Page": second_page}
 
     # Add a sidebar to select the page
     selected_page = st.sidebar.selectbox("Select a page", list(pages.keys()))
