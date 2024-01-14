@@ -32,6 +32,21 @@ def bagian_pertama():
     st.dataframe(df_daily.head(6))
     st.write("Info Data")
     st.dataframe(df_daily.describe())
+    
+    #----
+    kolomA = df_daily['Date']
+    kolomB = df_daily['Close']
+
+    # Mengonversi objek Pandas Series ke numpy array
+    arrayA = kolomA.to_numpy()
+    arrayB = kolomB.to_numpy()
+
+    # Menggunakan indeks multi-dimensi pada numpy array
+    resultA = arrayA[:, None]
+    resultB = arrayB[:, None]
+    df_plt['Date'] = resultA
+    df_plt['Close'] = resultB
+    #----
     df_plt['Date'] = pd.to_datetime(df_plt['Date'])
     plt.figure(figsize=(10, 6))
     plt.plot(df_plt['Date'], df_plt['Close'], label='Close Price')
