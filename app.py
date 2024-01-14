@@ -14,6 +14,7 @@ file = "dailybrentoil.csv"
 
 df_daily = pd.read_csv(file)
 df_daily = df_daily.iloc[:, :-3]
+df_daily['Date'] = pd.to_datetime(df_daily['Date'])
 # -- -- --
 
 def beranda():
