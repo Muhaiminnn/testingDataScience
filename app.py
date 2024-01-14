@@ -27,9 +27,9 @@ def beranda():
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
-    df_daily.head(10)
-    df_daily.info()
-    df_daily.describe()
+    st.dataframe(df_daily.head(10))
+    st.dataframe(df_daily.info())
+    st.dataframe(df_daily.describe())
     
 
 def bagian_kedua():
