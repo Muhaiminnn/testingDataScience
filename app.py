@@ -33,6 +33,9 @@ def bagian_pertama():
     st.write("Info Data")
     st.dataframe(df_daily.describe())
 
+    df_daily[['tanggal','jam']] = df_daily['Date'].str.split(' ',expand = True)
+    df_daily.drop("Date",inplace = True, axis = 1)
+    
     column_a = df_daily['Date']
     column_b = df_daily['Close']
 
@@ -42,9 +45,9 @@ def bagian_pertama():
     df_plt['Date'] = array_a
     df_plt['Close'] = array_b
     
-    array_a = pd.to_datetime(array_a, format='%Y-%m-%d')
+    df_daily['tanggal'] = pd.to_datetime(df_daily['tanggal'])
     plt.figure(figsize=(10, 6))
-    plt.plot(array_a, array_b, label='Close Price')
+    plt.plot(df_daily['tanggal'], df_daily['Close'], label='Close Price')
     plt.title('Close Price Over Time')
     plt.xlabel('Date')
     plt.ylabel('Close Price')
