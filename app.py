@@ -10,8 +10,7 @@ def beranda():
     st.write("Muhaimin - Universitas Negeri Makassar")
     st.write("14 Januari 2023")
     st.write("Task Mini Project:")
-    st.write("Sebagai Pemenuhan Kualifikasi Posisi Data Scientist di Kalla")
-    st.image("GambarTask.jpg")
+    st.image("GambarTask.jpg", width=300, height=700, caption="Sebagai Pemenuhan Kualifikasi Posisi Data Scientist di Kalla")
 
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
@@ -28,9 +27,9 @@ def main():
     st.sidebar.title("Navigasi")
 
     if "halaman" not in st.session_state:
-        st.session_state.halaman = "Beranda"
+        st.session_state.halaman = "First"
 
-    halaman = {"First Page": beranda, "About Data": bagian_pertama, "Analisis": bagian_kedua}
+    halaman = {"First": beranda, "About Data": bagian_pertama, "Analisis": bagian_kedua}
 
     st.sidebar.write("Pilih halaman:")
     halaman_terpilih = st.sidebar.radio("", list(halaman.keys()))
