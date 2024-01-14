@@ -32,7 +32,7 @@ def bagian_pertama():
     st.dataframe(df_daily.head(6))
     st.write("Info Data")
     st.dataframe(df_daily.describe())
-    df_daily['Date'] = pd.to_datetime(df_daily['Date'])
+    df_plt['Date'] = pd.to_datetime(df_plt['Date'])
     plt.figure(figsize=(10, 6))
     plt.plot(df_plt['Date'], df_plt['Close'], label='Close Price')
     plt.title('Close Price Over Time')
