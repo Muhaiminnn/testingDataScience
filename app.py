@@ -50,6 +50,7 @@ def bagian_pertama():
     plt.ylabel('Close Price')
     plt.legend()
     plt.show()
+    st.write("Pola & Tren Harga Minyak (Close)")
     st.pyplot(plt)
     
 
