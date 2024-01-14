@@ -6,16 +6,16 @@ subprocess.call(['pip', 'install', '-r', 'requirements.txt'])
 import streamlit as st
 
 def beranda():
-    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Beranda")
-    st.write("Selamat datang di halaman beranda!")
+    st.title("Mini Project Kalla - Prediksi Minyak Dunia")
+    st.write("Task Mini Project:")
 
 def bagian_pertama():
-    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Pertama")
-    st.write("Anda berada di bagian pertama.")
+    st.title("Mini Project Kalla - Prediksi Minyak Dunia")
+    st.write("Eksplorasi dan Analisis Data")
 
 def bagian_kedua():
-    st.title("Aplikasi Streamlit dengan Sidebar Permanen - Bagian Kedua")
-    st.write("Anda berada di bagian kedua.")
+    st.title("Mini Project Kalla - Prediksi Minyak Dunia")
+    st.write("Analisis Time Series - ARIMA")
 
 def main():
     st.set_page_config(page_title="Sidebar Permanen", page_icon=":house:", layout="wide")
@@ -39,7 +39,7 @@ def main():
         """
         <style>
             .sidebar .sidebar-content {
-                width: 250px;
+                width: 200px;
                 background-color: #44c944;
                 padding: 20px;
                 position: fixed;
@@ -47,7 +47,7 @@ def main():
                 overflow-y: auto;
             }
             .main {
-                margin-left: 50px;
+                margin-left: 25px;
             }
         </style>
         """,
