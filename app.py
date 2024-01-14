@@ -10,12 +10,13 @@ import seaborn as sns
 import streamlit as st
 
 # -- Import File --
-path = '/content/drive/MyDrive/Kalla Mini Project/brentcrudeoil.xlsx'
+path = 'brentcrudeoil.xlsx'
 
 df_daily = pd.read_excel(path, sheet_name='dailybrentoil')
 df_daily = df_daily.iloc[:, :-3]
 
 df_daily.head(10)
+# -- -- --
 
 def beranda():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
