@@ -11,12 +11,10 @@ import openpyxl
 import streamlit as st
 
 # -- Import File --
-path = 'brentcrudeoil.xlsx'
+file = st.file_uploader("brentcrudeoil.", type=["xlsx", "xls"])
 
-df_daily = pd.read_excel(path, sheet_name='dailybrentoil')
+df_daily = pd.read_excel(file, sheet_name='dailybrentoil')
 df_daily = df_daily.iloc[:, :-3]
-
-df_daily.head(10)
 # -- -- --
 
 def beranda():
@@ -30,6 +28,7 @@ def beranda():
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
+    df_daily.head(10)
     df_daily.info()
     df_daily.describe()
     
