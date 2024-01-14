@@ -14,7 +14,6 @@ file = "dailybrentoil.csv"
 
 df_daily = pd.read_csv(file)
 df_daily = df_daily.iloc[:, :-3]
-df_daily['Date'] = pd.to_datetime(df_daily['Date'])
 # -- -- --
 
 def beranda():
@@ -29,9 +28,10 @@ def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
     st.write("Preview Data")
-    st.dataframe(df_daily.head(10))
+    st.dataframe(df_daily.head(6))
     st.write("Info Data")
     st.dataframe(df_daily.describe())
+    df_daily['Date'] = pd.to_datetime(df_daily['Date'])
     '''plt.figure(figsize=(10, 6))
     plt.plot(df_daily['Date'], df_daily['Close'], label='Close Price')
     plt.title('Close Price Over Time')
