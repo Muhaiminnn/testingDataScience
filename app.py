@@ -27,7 +27,7 @@ def main():
     if "halaman" not in st.session_state:
         st.session_state.halaman = "Beranda"
 
-    halaman = {"Beranda": beranda, "Bagian Pertama": bagian_pertama, "Bagian Kedua": bagian_kedua}
+    halaman = {"First Page": beranda, "About Data": bagian_pertama, "Analisis": bagian_kedua}
 
     st.sidebar.write("Pilih halaman:")
     halaman_terpilih = st.sidebar.radio("", list(halaman.keys()))
