@@ -27,9 +27,18 @@ def beranda():
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
+    st.write("Preview Data")
     st.dataframe(df_daily.head(10))
-    st.dataframe(df_daily.info())
+    st.write("Info Data")
     st.dataframe(df_daily.describe())
+    plt.figure(figsize=(10, 6))
+    plt.plot(df_daily['Date'], df_daily['Close'], label='Close Price')
+    plt.title('Close Price Over Time')
+    plt.xlabel('Date')
+    plt.ylabel('Close Price')
+    plt.legend()
+    plt.show()
+    st.pyplot(plt)
     
 
 def bagian_kedua():
