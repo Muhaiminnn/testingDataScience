@@ -74,7 +74,7 @@ def bagian_ketiga():
     st.dataframe(hasil)
     st.write("\n\nKesimpulan:")
     st.write("\n1. Model terbaik yang bisa digunakan untuk memprediksi adalah ARIMA(1, 0, 1) dengan error 3.30%")
-    st.write("\n2. Harga Minyak pada awal Februari 2024 diprediksi akan tetap berada pada sekitar 78")
+    st.write("\n2. Harga Minyak pada awal Februari 2024 diprediksi akan tetap berada pada sekitar 77")
 
 def main():
     st.set_page_config(page_title="Sidebar Permanen", page_icon=":house:", layout="wide")
