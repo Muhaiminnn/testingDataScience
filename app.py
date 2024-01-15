@@ -40,6 +40,8 @@ def bagian_pertama():
 def bagian_kedua():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Analisis Time Series - ARIMA")
+    d_mape = pd.read_csv('mape_rmse.csv')
+    st.dataframe(d_mape)
 
 def main():
     st.set_page_config(page_title="Sidebar Permanen", page_icon=":house:", layout="wide")
