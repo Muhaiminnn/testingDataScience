@@ -28,30 +28,12 @@ def beranda():
 def bagian_pertama():
     st.title("Mini Project Kalla - Prediksi Minyak Dunia")
     st.write("Eksplorasi dan Analisis Data")
-    st.write("Preview Data")
+    st.write("/nPreview Data")
     st.dataframe(df_daily.head(6))
-    st.write("Info Data")
+    st.write("/nInfo Data")
     st.dataframe(df_daily.describe())
-
-    df_daily[['tanggal','jam']] = df_daily['Date'].str.split(' ',expand = True)
-    df_daily.drop("Date",inplace = True, axis = 1)
-    
-    column_a = df_daily['tanggal']
-    column_b = df_daily['Close']
-
-    array_a = column_a.to_numpy()
-    array_b = column_b.to_numpy()
-    
-    #array_a = pd.to_datetime(array_a, format='%m/%d/%Y')
-    plt.figure(figsize=(10, 6))
-    plt.plot(array_a, array_b, label='Close Price')
-    plt.title('Close Price Over Time')
-    plt.xlabel('Date')
-    plt.ylabel('Close Price')
-    plt.legend()
-    plt.show()
-    st.write("Pola & Tren Harga Minyak (Close)")
-    st.pyplot(plt)
+    st.write("/nPola & Tren Harga Minyak (Close)")
+    st.image("")
     
 
 def bagian_kedua():
