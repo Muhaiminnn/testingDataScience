@@ -1,6 +1,7 @@
 Project Ini Sebagai Tugas Mini Project dari Kalla untuk seleksi posisi Magang Data Scientist
 
 Saya,
+
 Nama             : Muhaimin
 Asal Universitas : Universitas Negeri Makassar
 
